@@ -28,7 +28,9 @@ module.exports = {
             rollupPlugins.push(uglify());
         }
 
-        return gulp.src(['./src/components/**/*.component.js'])
+        return gulp.src([
+            './src/components/**/*.js'
+        ])
             .pipe(wait(500))
             .pipe(map(function (file, done) {
                 // Require the corresponding package.json

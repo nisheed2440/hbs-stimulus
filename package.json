@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "start": "./node_modules/.bin/fractal build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "namespace": "DNG",
   "devDependencies": {
+    "@frctl/fractal": "^1.1.7",
+    "@frctl/handlebars": "^1.1.4",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-plugin-external-helpers": "^6.22.0",

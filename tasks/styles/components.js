@@ -19,7 +19,8 @@ module.exports = {
             processors.push(nano);
         }
         return gulp.src([
-                `./src/components/**/*.component.scss`
+                `./src/components/**/*.scss`,
+                `!./src/components/**/_*.scss`
             ])
             .pipe(wait(500))
             .pipe(sass({
