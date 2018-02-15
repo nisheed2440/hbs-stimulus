@@ -1,4 +1,5 @@
 'use strict';
+const path = require('path');
 
 /* Create a new Fractal instance and export it for use elsewhere if required */
 const fractal = module.exports = require('@frctl/fractal').create();
@@ -8,6 +9,9 @@ const hbs = require('@frctl/handlebars')({
     helpers: {
         json: function(context) {
             return JSON.stringify(context, null ,4);
+        },
+        concat: function(basePath, assetPath) {
+            return path.join(basePath, assetPath).replace(/\\/g,'/');
         }
     }
     /* other configuration options here */
@@ -32,5 +36,6 @@ fractal.web.set('static.path', __dirname + '/dist');
 
 /* Set the static HTML build destination */
 fractal.web.set('builder.dest', __dirname + '/build');
+
 /* Set the default preview template */
 fractal.components.set('default.preview', '@preview');
