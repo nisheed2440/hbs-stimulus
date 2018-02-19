@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ _target.title }} | {{ _config.project.title }}</title>
     {{!-- Output the application CSS --}}
-    <link rel="stylesheet" href="{{path '/app.css'}}">
+    <link rel="stylesheet" href="{{path '/styles/app.css'}}">
     {{!-- Output the relative CSS --}}
     {{#each _target.resources.assets}}
         {{#if isCSS}}
@@ -19,7 +19,7 @@
 
     <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
     {{!-- Output the application JS --}}
-    <script src="{{path '/app.js'}}"></script>
+    <script src="{{path '/scripts/app.js'}}"></script>
     {{!-- Output the relative JS --}}
     {{#each _target.resources.assets}}
         {{#if isJS}}

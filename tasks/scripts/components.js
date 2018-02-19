@@ -46,7 +46,7 @@ module.exports = {
                 }).then(bundle => {
                     done(null, file);
                     return bundle.write(_.defaultsDeep({
-                            file: `./dist/components/${componentName}/${componentFile}`,
+                            file: `./dist/components/components/${componentName}/${componentFile}`,
                             format: 'iife',
                             sourcemap: global.BUILD_ENVIRONMENT === 'prod' ? false : true,
                             paths: {

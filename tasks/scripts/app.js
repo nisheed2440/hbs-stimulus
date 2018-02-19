@@ -31,7 +31,7 @@ module.exports = {
         }).then(bundle => {
             return bundle.write(_.defaultsDeep({
                 name: `${global.APP_NAMESPACE}.App`,
-                file: `./dist/app.js`,
+                file: `./dist/scripts/app.js`,
                 format: 'iife',
                 sourcemap: global.BUILD_ENVIRONMENT === 'prod' ? false : true,
                 globals: {

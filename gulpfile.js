@@ -37,7 +37,9 @@ global.fractal.web.set('static.path', __dirname + '/dist');
 global.fractal.web.set('builder.dest', __dirname + '/build');
 
 /* Set the default preview template */
-global.fractal.components.set('default.preview', '@preview');
+global.fractal.components.set('default.preview', '@component-preview');
+global.fractal.components.set('title', 'Core');
+global.fractal.components.set('label', 'core');
 
 // any other configuration or customisation here
 global.fractalLogger = global.fractal.cli.console; // keep a reference to the fractal CLI console utility
