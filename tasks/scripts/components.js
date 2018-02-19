@@ -28,7 +28,9 @@ module.exports = {
             rollupPlugins.push(uglify());
         }
 
-        return gulp.src(['./src/components/**/*.component.js'])
+        return gulp.src([
+            './src/components/**/*.js'
+        ])
             .pipe(wait(500))
             .pipe(map(function (file, done) {
                 // Require the corresponding package.json
@@ -44,7 +46,7 @@ module.exports = {
                 }).then(bundle => {
                     done(null, file);
                     return bundle.write(_.defaultsDeep({
-                            file: `./dist/components/${componentName}/${componentFile}`,
+                            file: `./dist/components/components/${componentName}/${componentFile}`,
                             format: 'iife',
                             sourcemap: global.BUILD_ENVIRONMENT === 'prod' ? false : true,
                             paths: {

@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "start": "./node_modules/.bin/fractal.cmd start",
+    "fractal": "./node_modules/.bin/fractal.cmd build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "namespace": "DNG",
   "devDependencies": {
+    "@frctl/fractal": "^1.1.7",
+    "@frctl/handlebars": "^1.1.4",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -22,12 +27,16 @@
     "eslint": "^4.17.0",
     "eslint-plugin-babel": "^4.1.2",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
     "gulp-eslint": "^4.0.2",
+    "gulp-flatten": "^0.4.0",
     "gulp-postcss": "^7.0.1",
     "gulp-require-tasks": "^1.2.1",
     "gulp-sass": "^3.1.0",
     "gulp-sequence": "^1.0.0",
     "gulp-wait": "0.0.2",
+    "html-minifier": "^3.5.9",
+    "js-beautify": "^1.7.5",
     "lodash": "^4.17.5",
     "map-stream": "0.0.7",
     "node-sass": "^4.7.2",
@@ -42,6 +51,7 @@
     "rollup-plugin-uglify": "^3.0.0",
     "stimulus": "^1.0.1",
     "typescript": "^2.7.1",
+    "vinyl": "^2.1.0",
     "yargs": "^11.0.0"
   }
 }

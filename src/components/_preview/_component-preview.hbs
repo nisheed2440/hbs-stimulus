@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ _target.title }} | {{ _config.project.title }}</title>
+    {{!-- Output the application CSS --}}
+    <link rel="stylesheet" href="{{path '/styles/app.css'}}">
+    {{!-- Output the relative CSS --}}
+    {{#each _target.resources.assets}}
+        {{#if isCSS}}
+            <link rel="stylesheet" href="{{path (concat '../' relPath)}}">
+        {{/if}}
+    {{/each}}
+</head>
+<body>
+    {{{yield}}}
+
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    {{!-- Output the application JS --}}
+    <script src="{{path '/scripts/app.js'}}"></script>
+    {{!-- Output the relative JS --}}
+    {{#each _target.resources.assets}}
+        {{#if isJS}}
+            <script src="{{path (concat '../' relPath)}}"></script>
+        {{/if}}
+    {{/each}}
+</body>
+</html>

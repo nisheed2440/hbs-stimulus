@@ -26,6 +26,6 @@ module.exports = {
                 includePaths: ['node_modules', 'bower_components', 'src', '.']
             }))
             .pipe(postcss(processors))
-            .pipe(gulp.dest('./dist'));
+            .pipe(gulp.dest('./dist/styles'));
     }
 };
