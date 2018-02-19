@@ -8,7 +8,7 @@
     },
     "variants": [
         {
-            "name": "warning",
+            "name": "alpha",
             "status": "wip",
             "context": {
                 "modifier": "warning",
@@ -16,7 +16,7 @@
             }
         },
         {
-            "name": "success",
+            "name": "beta",
             "status": "prototype",
             "context": {
                 "modifier": "success",
