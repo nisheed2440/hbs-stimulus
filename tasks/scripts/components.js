@@ -4,6 +4,7 @@ const resolve = require('rollup-plugin-node-resolve');
 const babel = require('rollup-plugin-babel');
 const filesize = require('rollup-plugin-filesize');
 const uglify = require('rollup-plugin-uglify');
+const commonjs = require('rollup-plugin-commonjs');
 const path = require('path');
 const fs = require('fs');
 const map = require('map-stream');
@@ -20,6 +21,7 @@ module.exports = {
                 include: ['*.js', '**/*.js'],
                 exclude: 'node_modules/**'
             }),
+            commonjs(),
             filesize()
         ];
 

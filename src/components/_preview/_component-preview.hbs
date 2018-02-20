@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{path '/_fractulus/assets/favicon.ico'}}" type="image/ico">
     <title>{{ _target.title }} | {{ _config.project.title }}</title>
     {{!-- Output the application CSS --}}
     <link rel="stylesheet" href="{{path '/styles/app.css'}}">
+    <script src="{{path '/_fractulus/scripts/polyfill.js'}}"></script>
     {{!-- Output the relative CSS --}}
     {{#each _target.resources.assets}}
         {{#if isCSS}}
             <link rel="stylesheet" href="{{path (concat '../' relPath)}}">
         {{/if}}
-    {{/each}}
+    {{/each}}    
 </head>
 <body>
     {{{yield}}}
-
     <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
     {{!-- Output the application JS --}}
     <script src="{{path '/scripts/app.js'}}"></script>

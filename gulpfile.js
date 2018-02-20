@@ -18,6 +18,17 @@ global.PARTIALS_OBJ = {};
 
 /* Create a new Fractal instance and export it for use elsewhere if required */
 global.fractal = module.exports = require('@frctl/fractal').create();
+/** Fractal theme overrides for fractulus */
+const mandelbrot = require('@frctl/mandelbrot')({
+    favicon: '/_fractulus/assets/favicon.ico',
+    nav: ["docs", "components"],
+    lang: 'en-US',
+    styles: ['default', '/_fractulus/styles/theme.css'],
+    scripts: ['/_fractulus/scripts/polyfill.js', 'default', '/_fractulus/scripts/theme.js'],
+    static: {
+        mount: '_theme'
+    }
+});
 
 /* Set the title of the project */
 global.fractal.set('project.title', 'FooCorp Component Library');
@@ -35,6 +46,9 @@ global.fractal.web.set('static.path', __dirname + '/dist');
 
 /* Set the static HTML build destination */
 global.fractal.web.set('builder.dest', __dirname + '/build');
+
+/** Set web theme */
+global.fractal.web.theme(mandelbrot);
 
 /* Set the default preview template */
 global.fractal.components.set('default.preview', '@component-preview');

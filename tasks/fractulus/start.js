@@ -22,6 +22,7 @@ module.exports = {
 
         /** JS File changes */
         gulp.watch([
+            './src/_fractulus/scripts/*.js',
             './src/components/**/*.js',
             '!./src/components/**/*.spec.js'
         ], () => {
@@ -34,6 +35,7 @@ module.exports = {
 
         /** CSS File changes */
         gulp.watch([
+            './src/_fractulus/styles/*.scss',
             './src/components/**/*.scss',
         ], () => {
             sequence('styles')((err) => {
@@ -64,7 +66,7 @@ module.exports = {
             './src/components/**/*.md',
             '!./src/components/**/partials/*.hbs'
         ], () => {
-            sequence('copy:fractal')((err) => {
+            sequence('copy:fractulus')((err) => {
                 if (err) console.log(err);
                 // Reload fractal server
                 server.emit('source:changed');
