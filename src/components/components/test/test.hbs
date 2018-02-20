@@ -1,8 +1,13 @@
-<div class="notification is-{{ modifier }}">
-  <button class="delete"></button>
-  {{ message }}
-  {{> _sub }}
-  {{> _subHello }}
-
-  <p>Veniam voluptate qui incididunt ullamco id ut ullamco aute et eu irure Lorem officia adipisicing.</p>
+<div class="section" data-controller="test">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        {{> _testForm }}
+      </div>
+      <div class="column">
+        {{> _testNotification }}        
+      </div>
+    </div>
+  </div>
 </div>
+

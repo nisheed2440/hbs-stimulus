@@ -2,11 +2,20 @@ import {Controller} from "stimulus";
 import App from "app";
 
 class Test extends Controller {
-  static targets = [ "name", "output" ];
+  static targets = [ "title", "output", "notification"];
+  connect() {
+    this.notificationTarget.classList.add('is-hidden');
+  }
 
-  greet() {
-    this.outputTarget.textContent =
-      `Hello, ${this.nameTarget.value}!!!`;
+  greet(e) {
+    e.preventDefault();
+    this.notificationTarget.classList.remove('is-hidden');
+    this.outputTarget.textContent = `${this.titleTarget.value}`;
+  }
+
+  cancel(e) {
+    e.preventDefault();
+    this.notificationTarget.classList.add('is-hidden');
   }
 }
 
