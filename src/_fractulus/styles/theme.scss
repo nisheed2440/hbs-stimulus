@@ -1,1 +1,5 @@
 // Theme CSS goes here. You may import other SASS files here. 
+@import "./_variables.scss";
+.Header {
+    background-color: $theme-color-primary;
+}

@@ -26,7 +26,7 @@ module.exports = {
             './src/components/**/*.js',
             '!./src/components/**/*.spec.js'
         ], () => {
-            sequence('scripts')((err) => {
+            sequence('scripts', 'scripts:fractulus')((err) => {
                 if (err) console.log(err);
                 // Reload fractal server
                 server.emit('source:changed');
@@ -38,7 +38,7 @@ module.exports = {
             './src/_fractulus/styles/*.scss',
             './src/components/**/*.scss',
         ], () => {
-            sequence('styles')((err) => {
+            sequence('styles', 'styles:fractulus')((err) => {
                 if (err) console.log(err);
                 // Reload fractal server
                 server.emit('source:changed');
@@ -64,6 +64,7 @@ module.exports = {
             './src/components/**/*.hbs',
             './src/components/**/*.json',
             './src/components/**/*.md',
+            './src/docs/**/*.md',
             '!./src/components/**/partials/*.hbs'
         ], () => {
             sequence('copy:fractulus')((err) => {

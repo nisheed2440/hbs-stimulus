@@ -9,13 +9,16 @@ class Test extends Controller {
 
   greet(e) {
     e.preventDefault();
-    this.notificationTarget.classList.remove('is-hidden');
-    this.outputTarget.textContent = `${this.titleTarget.value}`;
+    if(this.titleTarget.value.trim() !== '') {
+      this.notificationTarget.classList.remove('is-hidden');
+      this.outputTarget.textContent = `${this.titleTarget.value}`;
+    }
   }
 
   cancel(e) {
     e.preventDefault();
     this.notificationTarget.classList.add('is-hidden');
+    this.titleTarget.value = '';
   }
 }
 

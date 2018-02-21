@@ -7,7 +7,15 @@ global.BUILD_ENVIRONMENT = argv.env ? argv.env : 'dev';
 global.ESLINT_RC = JSON.parse(fs.readFileSync(path.resolve(`.eslintrc`), 'utf8'));
 global.APP_NAMESPACE = pkg.namespace || 'XT';
 global.PARTIALS_OBJ = {};
-
+/**
+ * Function to require uncached module/file 
+ * @param {string} module The name of the module that needs to be freshly required.
+ * https://stackoverflow.com/questions/9210542/node-js-require-cache-possible-to-invalidate
+ */
+function requireUncached(module){
+    delete require.cache[require.resolve(module)]
+    return require(module);
+}
 /*
  * Configure a Fractal instance.
  *
@@ -31,9 +39,9 @@ const mandelbrot = require('@frctl/mandelbrot')({
 });
 
 /* Set the title of the project */
-global.fractal.set('project.title', 'FooCorp Component Library');
-global.fractal.set('project.version', 'v1.0');
-global.fractal.set('project.author', 'Mickey Mouse');
+global.fractal.set('project.title', pkg.description);
+global.fractal.set('project.version', pkg.version);
+global.fractal.set('project.author', pkg.author);
 
 /* Tell Fractal where the components will live */
 global.fractal.components.set('path', __dirname + '/dist/components');
@@ -83,12 +91,3 @@ global.updateFractalEngine = function() {
 require('gulp-require-tasks')({
     path: process.cwd() + '/tasks'
 });
-/**
- * Function to require uncached module/file 
- * @param {string} module The name of the module that needs to be freshly required.
- * https://stackoverflow.com/questions/9210542/node-js-require-cache-possible-to-invalidate
- */
-function requireUncached(module){
-    delete require.cache[require.resolve(module)]
-    return require(module);
-}
