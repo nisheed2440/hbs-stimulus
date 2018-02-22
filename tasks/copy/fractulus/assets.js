@@ -1,8 +1,8 @@
 module.exports = {
     fn: function (gulp) {
         return gulp.src([
-            './src/_fractulus/assets/**/*.*'
+            './src/fractulus/assets/**/*.*'
         ])
-        .pipe(gulp.dest('./dist/_fractulus/assets'));
+        .pipe(gulp.dest('./dist/fractulus/assets'));
     }
 };

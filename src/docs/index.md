@@ -1,4 +1,4 @@
-![fractulus-logo](/_fractulus/assets/fractulus-logo-small.png "Logo")
+![fractulus-logo](/fractulus/assets/fractulus-logo-small.png "Logo")
 
 Version **1.0.0**
 ---

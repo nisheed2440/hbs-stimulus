@@ -29,7 +29,7 @@ module.exports = {
         }
 
         return gulp.src([
-            './src/_fractulus/scripts/*.js'
+            './src/fractulus/scripts/*.js'
         ])
         .pipe(wait(500))
         .pipe(map(function (file, done) {
@@ -43,7 +43,7 @@ module.exports = {
             }).then(bundle => {
                 done(null, file);
                 return bundle.write({
-                        file: `./dist/_fractulus/scripts/${componentFile}`,
+                        file: `./dist/fractulus/scripts/${componentFile}`,
                         format: 'umd'
                     });
             });

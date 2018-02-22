@@ -28,13 +28,13 @@ function requireUncached(module){
 global.fractal = module.exports = require('@frctl/fractal').create();
 /** Fractal theme overrides for fractulus */
 const mandelbrot = require('@frctl/mandelbrot')({
-    favicon: '/_fractulus/assets/favicon.ico',
+    favicon: '/fractulus/assets/favicon.ico',
     nav: ["docs", "components"],
     lang: 'en-US',
-    styles: ['default', '/_fractulus/styles/theme.css'],
-    scripts: ['/_fractulus/scripts/polyfill.js', 'default', '/_fractulus/scripts/theme.js'],
+    styles: ['default', '/fractulus/styles/theme.css'],
+    scripts: ['/fractulus/scripts/polyfill.js', 'default', '/fractulus/scripts/theme.js'],
     static: {
-        mount: '_theme'
+        mount: 'theme'
     }
 });
 

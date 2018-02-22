@@ -19,13 +19,13 @@ module.exports = {
             processors.push(nano);
         }
         return gulp.src([
-                `./src/_fractulus/**/*.scss`
+                `./src/fractulus/**/*.scss`
             ])
             .pipe(wait(500))
             .pipe(sass({
                 includePaths: ['node_modules', 'bower_components', 'src', '.']
             }))
             .pipe(postcss(processors))
-            .pipe(gulp.dest('./dist/_fractulus'));
+            .pipe(gulp.dest('./dist/fractulus'));
     }
 };
